@@ -13,3 +13,7 @@ export function addWidget(widget: NewWidget): Promise<any> {
     .send(widget)
     .then((res) => res.body)
 }
+
+export function deleteWidget(id: number): Promise<void> {
+  return request.delete(`${widgetUrl}${id}`).then(() => {})
+}
