@@ -3,12 +3,9 @@ export interface NewWidget {
   price: number
   mfg: string
   inStock: number
+  rating: number
 }
 
-export interface Widget {
+export interface Widget extends NewWidget {
   id: number
-  name: string
-  price: number
-  mfg: string
-  inStock: number
 }
