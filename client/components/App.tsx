@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import * as Models from '../../models/Widget.ts'
 import { getWidgets } from '../apiClient.ts'
 import AddWidget from './AddWidget.tsx'
+import DeleteWidget from './DeleteWidget.tsx'
 
 function App() {
   const [widgets, setWidgets] = useState([] as Models.Widget[])
@@ -28,6 +29,9 @@ function App() {
           <p>Price: {widget.price}</p>
           <p>Manufacturer: {widget.mfg}</p>
           <p>In Stock: {widget.inStock}</p>
+          <div>
+            <DeleteWidget id={widget.id} onRefresh={refreshWidgets} />
+          </div>
         </div>
       ))}
     </div>
